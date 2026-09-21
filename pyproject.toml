@@ -7,7 +7,7 @@ name = "ai-agent-conversation"
 version = "0.1.0"
 description = "AI agent for conversational job application information collection"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.14"
 license = {text = "MIT"}
 dependencies = [
     "fastapi>=0.104.0",

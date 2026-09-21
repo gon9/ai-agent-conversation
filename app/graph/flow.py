@@ -3,8 +3,7 @@
 """
 from typing import Any, Dict
 
-from langgraph.graph import StateGraph
-from langgraph.graph.graph import END
+from langgraph.graph import END, StateGraph
 from langgraph.checkpoint.memory import MemorySaver
 
 # スキーマをインポート

@@ -2,7 +2,8 @@ import json
 import sqlite3
 from typing import Dict, Any, List
 from datetime import datetime
-from langgraph.graph import Graph, END
+from langgraph.graph import END, StateGraph
+from langgraph.graph.state import CompiledStateGraph
 from pydantic import BaseModel
 
 # 状態管理用のモデル
@@ -154,9 +155,9 @@ class FixedQuestionFlow:
             return END
         return "ask_question_list"
     
-    def create_graph(self) -> Graph:
+    def create_graph(self) -> CompiledStateGraph:
         """LangGraphのワークフロー作成"""
-        workflow = Graph()
+        workflow = StateGraph(QuestionState)
         
         # ノードを追加
         workflow.add_node("ask_question_list", self.ask_question_list)
